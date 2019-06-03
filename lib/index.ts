@@ -14,7 +14,6 @@ import {
   FixtureDefinition,
   FixtureDynamic,
   FixtureRelation,
-  FixtureStatic,
   IntermediateFixture,
   RelationConstraints
 } from "./types";
@@ -36,14 +35,6 @@ const CONSTRAINTS: RelationConstraints = {
 };
 const DEFAULT_AMOUNT = 5;
 const DEFAULT_CONSTRAINT = CONSTRAINTS.atMax(5);
-
-function isFixtureLambda(obj: FixtureDefinition): obj is FixtureDynamic {
-  return obj && typeof obj === "function";
-}
-
-function isFixtureConstraint(obj: any): obj is FixtureConstraint {
-  return obj && obj.type;
-}
 
 export class PrismaFaker {
   protected dmmf: DMMF;
